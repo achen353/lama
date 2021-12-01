@@ -10,8 +10,6 @@ import torch
 import torch.nn.functional as F
 import webdataset
 from omegaconf import OmegaConf, open_dict
-from skimage.feature import canny
-from skimage.transform import rescale, resize
 from torch.utils.data import (ConcatDataset, DataLoader, Dataset,
                               DistributedSampler, IterableDataset)
 

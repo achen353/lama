@@ -2,7 +2,6 @@
 
 import glob
 import os
-import shutil
 import traceback
 
 import hydra
@@ -13,7 +12,7 @@ from omegaconf import OmegaConf
 
 from saicinpainting.evaluation.masks.mask import (SegmentationMask,
                                                   propose_random_square_crop)
-from saicinpainting.evaluation.utils import SmallMode, load_yaml
+from saicinpainting.evaluation.utils import SmallMode
 from saicinpainting.training.data.masks import MixedMaskGenerator
 
 

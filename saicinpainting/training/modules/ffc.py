@@ -12,7 +12,6 @@ from saicinpainting.training.modules.base import (BaseDiscriminator,
 from saicinpainting.training.modules.spatial_transform import \
     LearnableSpatialTransformWrapper
 from saicinpainting.training.modules.squeeze_excitation import SELayer
-from saicinpainting.utils import get_shape
 
 
 class FFCSE_block(nn.Module):

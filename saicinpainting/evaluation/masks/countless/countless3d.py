@@ -1,18 +1,10 @@
-import io
 import math
-import random
-import sys
 import time
-from collections import defaultdict
-from copy import deepcopy
 from functools import reduce
 from itertools import combinations
 
 import numpy as np
-from memory_profiler import profile
-from PIL import Image
 from six.moves import range
-from tqdm import tqdm
 
 
 def countless5(a,b,c,d,e):

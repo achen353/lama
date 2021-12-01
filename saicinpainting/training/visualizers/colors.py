@@ -1,11 +1,9 @@
 import colorsys
-import random
 
 import matplotlib
 import numpy as np
 
 matplotlib.use('agg')
-import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
 
 

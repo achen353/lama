@@ -6,11 +6,9 @@ COUNTLESS performance test in Python.
 python countless2d.py ./images/NAMEOFIMAGE
 """
 
-import io
 import math
 import operator
 import os
-import random
 import sys
 import time
 from collections import defaultdict
