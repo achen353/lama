@@ -4,15 +4,16 @@ import glob
 import os
 import shutil
 import traceback
+
 import hydra
+import numpy as np
+import PIL.Image as Image
+from joblib import Parallel, delayed
 from omegaconf import OmegaConf
 
-import PIL.Image as Image
-import numpy as np
-from joblib import Parallel, delayed
-
-from saicinpainting.evaluation.masks.mask import SegmentationMask, propose_random_square_crop
-from saicinpainting.evaluation.utils import load_yaml, SmallMode
+from saicinpainting.evaluation.masks.mask import (SegmentationMask,
+                                                  propose_random_square_crop)
+from saicinpainting.evaluation.utils import SmallMode, load_yaml
 from saicinpainting.training.data.masks import MixedMaskGenerator
 
 

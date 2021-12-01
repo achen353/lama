@@ -14,6 +14,7 @@ from pytorch_lightning import seed_everything
 LOGGER = logging.getLogger(__name__)
 
 import platform
+
 if platform.system() != 'Linux':
     signal.SIGUSR1 = 1
 

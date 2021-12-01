@@ -1,4 +1,4 @@
-from __future__ import print_function, division
+from __future__ import division, print_function
 
 """
 COUNTLESS performance test in Python.
@@ -6,21 +6,23 @@ COUNTLESS performance test in Python.
 python countless2d.py ./images/NAMEOFIMAGE
 """
 
-import six
-from six.moves import range
-from collections import defaultdict
-from functools import reduce
-import operator 
 import io
-import os
-from PIL import Image
 import math
-import numpy as np
+import operator
+import os
 import random
 import sys
 import time
-from tqdm import tqdm
+from collections import defaultdict
+from functools import reduce
+
+import numpy as np
+import six
+from PIL import Image
 from scipy import ndimage
+from six.moves import range
+from tqdm import tqdm
+
 
 def simplest_countless(data):
   """

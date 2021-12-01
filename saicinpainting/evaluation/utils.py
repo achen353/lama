@@ -1,9 +1,9 @@
 from enum import Enum
 
+import torch
+import torch.nn as nn
 import yaml
 from easydict import EasyDict as edict
-import torch.nn as nn
-import torch
 
 
 def load_yaml(path):

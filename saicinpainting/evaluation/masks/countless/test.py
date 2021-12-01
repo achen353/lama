@@ -1,9 +1,9 @@
 from copy import deepcopy
 
-import numpy as np
-
 import countless2d
 import countless3d
+import numpy as np
+
 
 def test_countless2d():
   def test_all_cases(fn, test_zero):

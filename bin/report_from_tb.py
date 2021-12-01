@@ -7,7 +7,6 @@ import re
 import tensorflow as tf
 from torch.utils.tensorboard import SummaryWriter
 
-
 GROUPING_RULES = [
     re.compile(r'^(?P<group>train|test|val|extra_val_.*?(256|512))_(?P<title>.*)', re.I)
 ]

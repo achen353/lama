@@ -1,7 +1,7 @@
-import math
-import random
 import hashlib
 import logging
+import math
+import random
 from enum import Enum
 
 import cv2

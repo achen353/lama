@@ -9,8 +9,8 @@
 ############################################################
 
 import numpy as np
-from skimage.metrics import structural_similarity
 import torch
+from skimage.metrics import structural_similarity
 
 from saicinpainting.utils import get_shape
 
@@ -93,8 +93,9 @@ def tensor2tensorlab(image_tensor, to_norm=True, mc_only=False):
 
 
 def tensorlab2tensor(lab_tensor, return_inbnd=False):
-    from skimage import color
     import warnings
+
+    from skimage import color
     warnings.filterwarnings("ignore")
 
     lab = tensor2np(lab_tensor) * 100.
@@ -241,6 +242,7 @@ class BaseModel(torch.nn.Module):
 
 import os
 from collections import OrderedDict
+
 from scipy.ndimage import zoom
 from tqdm import tqdm
 
@@ -513,9 +515,9 @@ def score_jnd_dataset(data_loader, func, name=''):
 #                    networks_basic.py                     #
 ############################################################
 
+import numpy as np
 import torch.nn as nn
 from torch.autograd import Variable
-import numpy as np
 
 
 def spatial_average(in_tens, keepdim=True):
@@ -709,6 +711,7 @@ def print_network(net):
 ############################################################
 
 from collections import namedtuple
+
 import torch
 from torchvision import models as tv
 

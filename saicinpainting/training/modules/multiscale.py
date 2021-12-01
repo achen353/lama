@@ -1,10 +1,11 @@
-from typing import List, Tuple, Union, Optional
+from typing import List, Optional, Tuple, Union
 
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from saicinpainting.training.modules.base import get_conv_block_ctor, get_activation
+from saicinpainting.training.modules.base import (get_activation,
+                                                  get_conv_block_ctor)
 from saicinpainting.training.modules.pix2pixhd import ResnetBlock
 
 

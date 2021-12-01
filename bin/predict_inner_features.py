@@ -29,8 +29,9 @@ from omegaconf import OmegaConf
 from torch.utils.data._utils.collate import default_collate
 
 from saicinpainting.training.data.datasets import make_default_val_dataset
-from saicinpainting.training.trainers import load_checkpoint, DefaultInpaintingTrainingModule
-from saicinpainting.utils import register_debug_signal_handlers, get_shape
+from saicinpainting.training.trainers import (DefaultInpaintingTrainingModule,
+                                              load_checkpoint)
+from saicinpainting.utils import get_shape, register_debug_signal_handlers
 
 LOGGER = logging.getLogger(__name__)
 

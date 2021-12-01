@@ -9,13 +9,18 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 import webdataset
-from omegaconf import open_dict, OmegaConf
+from omegaconf import OmegaConf, open_dict
 from skimage.feature import canny
 from skimage.transform import rescale, resize
-from torch.utils.data import Dataset, IterableDataset, DataLoader, DistributedSampler, ConcatDataset
+from torch.utils.data import (ConcatDataset, DataLoader, Dataset,
+                              DistributedSampler, IterableDataset)
 
-from saicinpainting.evaluation.data import InpaintingDataset as InpaintingEvaluationDataset, \
-    OurInpaintingDataset as OurInpaintingEvaluationDataset, ceil_modulo, InpaintingEvalOnlineDataset
+from saicinpainting.evaluation.data import \
+    InpaintingDataset as InpaintingEvaluationDataset
+from saicinpainting.evaluation.data import InpaintingEvalOnlineDataset
+from saicinpainting.evaluation.data import \
+    OurInpaintingDataset as OurInpaintingEvaluationDataset
+from saicinpainting.evaluation.data import ceil_modulo
 from saicinpainting.training.data.aug import IAAAffine2, IAAPerspective2
 from saicinpainting.training.data.masks import get_mask_generator
 

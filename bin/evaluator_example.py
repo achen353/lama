@@ -8,7 +8,8 @@ from skimage.transform import resize
 from torch.utils.data import Dataset
 
 from saicinpainting.evaluation.evaluator import InpaintingEvaluator
-from saicinpainting.evaluation.losses.base_loss import SSIMScore, LPIPSScore, FIDScore
+from saicinpainting.evaluation.losses.base_loss import (FIDScore, LPIPSScore,
+                                                        SSIMScore)
 
 
 class SimpleImageDataset(Dataset):

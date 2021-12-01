@@ -2,11 +2,10 @@ import glob
 import os
 
 import cv2
-import PIL.Image as Image
 import numpy as np
-
-from torch.utils.data import Dataset
+import PIL.Image as Image
 import torch.nn.functional as F
+from torch.utils.data import Dataset
 
 
 def load_image(fname, mode='RGB', return_orig=False):

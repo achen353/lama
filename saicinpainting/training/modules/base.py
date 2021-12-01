@@ -1,10 +1,11 @@
 import abc
-from typing import Tuple, List
+from typing import List, Tuple
 
 import torch
 import torch.nn as nn
 
-from saicinpainting.training.modules.depthwise_sep_conv import DepthWiseSeperableConv
+from saicinpainting.training.modules.depthwise_sep_conv import \
+    DepthWiseSeperableConv
 from saicinpainting.training.modules.multidilated_conv import MultidilatedConv
 
 

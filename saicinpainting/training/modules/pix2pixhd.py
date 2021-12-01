@@ -1,16 +1,21 @@
 # original: https://github.com/NVIDIA/pix2pixHD/blob/master/models/networks.py
 import collections
-from functools import partial
 import functools
 import logging
 from collections import defaultdict
+from functools import partial
 
 import numpy as np
 import torch.nn as nn
 
-from saicinpainting.training.modules.base import BaseDiscriminator, deconv_factory, get_conv_block_ctor, get_norm_layer, get_activation
+from saicinpainting.training.modules.base import (BaseDiscriminator,
+                                                  deconv_factory,
+                                                  get_activation,
+                                                  get_conv_block_ctor,
+                                                  get_norm_layer)
 from saicinpainting.training.modules.ffc import FFCResnetBlock
 from saicinpainting.training.modules.multidilated_conv import MultidilatedConv
+
 
 class DotDict(defaultdict):
     # https://stackoverflow.com/questions/2352181/how-to-use-a-dot-to-access-members-of-dictionary

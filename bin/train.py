@@ -19,8 +19,10 @@ from pytorch_lightning.loggers import TensorBoardLogger
 from pytorch_lightning.plugins import DDPPlugin
 
 from saicinpainting.training.trainers import make_training_model
-from saicinpainting.utils import register_debug_signal_handlers, handle_ddp_subprocess, handle_ddp_parent_process, \
-    handle_deterministic_config
+from saicinpainting.utils import (handle_ddp_parent_process,
+                                  handle_ddp_subprocess,
+                                  handle_deterministic_config,
+                                  register_debug_signal_handlers)
 
 LOGGER = logging.getLogger(__name__)
 

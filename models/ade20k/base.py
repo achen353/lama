@@ -9,9 +9,7 @@ import torch.nn.functional as F
 from scipy.io import loadmat
 from torch.nn.modules import BatchNorm2d
 
-from . import resnet
-from . import mobilenet
-
+from . import mobilenet, resnet
 
 NUM_CLASS = 150
 base_path = os.path.dirname(os.path.abspath(__file__))  # current file path

@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
-import cv2
-import numpy as np
-import sklearn
-import torch
 import os
 import pickle
-import pandas as pd
+
+import cv2
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import sklearn
+import torch
 from joblib import Parallel, delayed
 
-from saicinpainting.evaluation.data import PrecomputedInpaintingResultsDataset, load_image
+from saicinpainting.evaluation.data import (
+    PrecomputedInpaintingResultsDataset, load_image)
 from saicinpainting.evaluation.losses.fid.inception import InceptionV3
 from saicinpainting.evaluation.utils import load_yaml
 from saicinpainting.training.visualizers.base import visualize_mask_and_images

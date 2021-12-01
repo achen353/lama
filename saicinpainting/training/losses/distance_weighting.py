@@ -3,7 +3,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torchvision
 
-from saicinpainting.training.losses.perceptual import IMAGENET_STD, IMAGENET_MEAN
+from saicinpainting.training.losses.perceptual import (IMAGENET_MEAN,
+                                                       IMAGENET_STD)
 
 
 def dummy_distance_weighter(real_img, pred_img, mask):

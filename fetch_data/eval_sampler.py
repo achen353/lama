@@ -1,7 +1,6 @@
 import os
 import random
 
-
 val_files_path = os.path.abspath('.') + '/places_standard_dataset/original/val/'
 val_files      = [val_files_path + image for image in os.listdir(val_files_path)]
 

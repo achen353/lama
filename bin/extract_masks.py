@@ -1,6 +1,7 @@
-import PIL.Image as Image
-import numpy as np
 import os
+
+import numpy as np
+import PIL.Image as Image
 
 
 def main(args):
