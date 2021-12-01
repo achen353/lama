@@ -8,7 +8,7 @@ from skimage.transform import resize
 from torch.utils.data import Dataset
 
 from saicinpainting.evaluation.evaluator import InpaintingEvaluator
-from saicinpainting.evaluation.losses.base_loss import SSIMScore, LPIPSScore, FIDScore
+from saicinpainting.evaluation.losses.base_loss import FIDScore, LPIPSScore, SSIMScore
 
 
 class SimpleImageDataset(Dataset):
@@ -32,14 +32,21 @@ def create_rectangle_mask(height, width):
     mask = np.ones((height, width))
     up_left_corner = width // 4, height // 4
     down_right_corner = (width - up_left_corner[0] - 1, height - up_left_corner[1] - 1)
-    cv2.rectangle(mask, up_left_corner, down_right_corner, (0, 0, 0), thickness=cv2.FILLED)
+    cv2.rectangle(
+        mask, up_left_corner, down_right_corner, (0, 0, 0), thickness=cv2.FILLED
+    )
     return mask
 
 
-class Model():
+class Model:
     def __call__(self, img_batch, mask_batch):
-        mean = (img_batch * mask_batch[:, None, :, :]).sum(dim=(2, 3)) / mask_batch.sum(dim=(1, 2))[:, None]
-        inpainted = mean[:, :, None, None] * (1 - mask_batch[:, None, :, :]) + img_batch * mask_batch[:, None, :, :]
+        mean = (img_batch * mask_batch[:, None, :, :]).sum(dim=(2, 3)) / mask_batch.sum(
+            dim=(1, 2)
+        )[:, None]
+        inpainted = (
+            mean[:, :, None, None] * (1 - mask_batch[:, None, :, :])
+            + img_batch * mask_batch[:, None, :, :]
+        )
         return inpainted
 
 
@@ -59,14 +66,10 @@ class SimpleImageSquareMaskDataset(Dataset):
         return len(self.dataset)
 
 
-dataset = SimpleImageDataset('imgs')
+dataset = SimpleImageDataset("imgs")
 mask_dataset = SimpleImageSquareMaskDataset(dataset)
 model = Model()
-metrics = {
-    'ssim': SSIMScore(),
-    'lpips': LPIPSScore(),
-    'fid': FIDScore()
-}
+metrics = {"ssim": SSIMScore(), "lpips": LPIPSScore(), "fid": FIDScore()}
 
 evaluator = InpaintingEvaluator(
     mask_dataset, scores=metrics, batch_size=3, area_grouping=True

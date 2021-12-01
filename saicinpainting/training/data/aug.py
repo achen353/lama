@@ -1,5 +1,6 @@
-from albumentations import DualIAATransform, to_tuple
 import imgaug.augmenters as iaa
+from albumentations import DualIAATransform, to_tuple
+
 
 class IAAAffine2(DualIAATransform):
     """Place a regular grid of points on the input and randomly move the neighbourhood of these point around
@@ -51,7 +52,16 @@ class IAAAffine2(DualIAATransform):
         )
 
     def get_transform_init_args_names(self):
-        return ("scale", "translate_percent", "translate_px", "rotate", "shear", "order", "cval", "mode")
+        return (
+            "scale",
+            "translate_percent",
+            "translate_px",
+            "rotate",
+            "shear",
+            "order",
+            "cval",
+            "mode",
+        )
 
 
 class IAAPerspective2(DualIAATransform):
@@ -68,8 +78,16 @@ class IAAPerspective2(DualIAATransform):
         image, mask
     """
 
-    def __init__(self, scale=(0.05, 0.1), keep_size=True, always_apply=False, p=0.5,
-                 order=1, cval=0, mode="replicate"):
+    def __init__(
+        self,
+        scale=(0.05, 0.1),
+        keep_size=True,
+        always_apply=False,
+        p=0.5,
+        order=1,
+        cval=0,
+        mode="replicate",
+    ):
         super(IAAPerspective2, self).__init__(always_apply, p)
         self.scale = to_tuple(scale, 1.0)
         self.keep_size = keep_size
@@ -78,7 +96,9 @@ class IAAPerspective2(DualIAATransform):
 
     @property
     def processor(self):
-        return iaa.PerspectiveTransform(self.scale, keep_size=self.keep_size, mode=self.mode, cval=self.cval)
+        return iaa.PerspectiveTransform(
+            self.scale, keep_size=self.keep_size, mode=self.mode, cval=self.cval
+        )
 
     def get_transform_init_args_names(self):
         return ("scale", "keep_size")
