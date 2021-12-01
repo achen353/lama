@@ -12,11 +12,11 @@ def main(args):
         output_dataset.write(rec)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import argparse
 
     aparser = argparse.ArgumentParser()
-    aparser.add_argument('infile', type=str)
-    aparser.add_argument('outpattern', type=str)
+    aparser.add_argument("infile", type=str)
+    aparser.add_argument("outpattern", type=str)
 
     main(aparser.parse_args())

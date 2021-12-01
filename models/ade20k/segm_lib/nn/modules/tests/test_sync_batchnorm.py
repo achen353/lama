@@ -3,15 +3,18 @@
 # Author : Jiayuan Mao
 # Email  : maojiayuan@gmail.com
 # Date   : 27/01/2018
-# 
+#
 # This file is part of Synchronized-BatchNorm-PyTorch.
 
 import unittest
 
 import torch
 import torch.nn as nn
-from sync_batchnorm import (DataParallelWithCallback, SynchronizedBatchNorm1d,
-                            SynchronizedBatchNorm2d)
+from sync_batchnorm import (
+    DataParallelWithCallback,
+    SynchronizedBatchNorm1d,
+    SynchronizedBatchNorm2d,
+)
 from sync_batchnorm.unittest import TorchTestCase
 from torch.autograd import Variable
 
@@ -29,7 +32,15 @@ def handy_var(a, unbias=True):
 
 def _find_bn(module):
     for m in module.modules():
-        if isinstance(m, (nn.BatchNorm1d, nn.BatchNorm2d, SynchronizedBatchNorm1d, SynchronizedBatchNorm2d)):
+        if isinstance(
+            m,
+            (
+                nn.BatchNorm1d,
+                nn.BatchNorm2d,
+                SynchronizedBatchNorm1d,
+                SynchronizedBatchNorm2d,
+            ),
+        ):
             return m
 
 
@@ -104,8 +115,10 @@ class SyncTestCase(TorchTestCase):
         bn.cuda()
         sync_bn.cuda()
 
-        self._checkBatchNormResult(bn, sync_bn, torch.rand(16, 10, 16, 16), True, cuda=True)
+        self._checkBatchNormResult(
+            bn, sync_bn, torch.rand(16, 10, 16, 16), True, cuda=True
+        )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
