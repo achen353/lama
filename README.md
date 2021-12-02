@@ -12,7 +12,7 @@ LaMa 是個圖像修復模型，透過欲修復區塊附近的背景或物體顏
 
 ## 模型/硬體限制
 ### 解析度
-- 論文中有測試 640 × 512 和 1920 × 1536 的圖片且效果皆不錯，這裡評估使用 1920 * 1280 的圖片模型也能夠使用。
+- 論文中有測試 640 × 512 和 1280 × 1536 的圖片且效果皆不錯，這裡評估使用 1280 * 1280 的圖片模型也能夠使用。
 - 2048 × 1080 （2K）的圖片也支援
 
 <img src="readme_assets/2k_result.png"/>
@@ -20,7 +20,7 @@ LaMa 是個圖像修復模型，透過欲修復區塊附近的背景或物體顏
 - 3840 x 2160 （4K）的圖片目前還沒成功（測試用的 Colab 會 crash）
 
 ### 時長
-Inference Time 使用 1920 × 1280 （HD）的圖片做測試，塗改面積平均佔圖片 7 - 10%，最大佔 20%；runtime 計算為五次平均
+Inference Time 使用 1280 × 1280 （HD）的圖片做測試，塗改面積平均佔圖片 7 - 10%，最大佔 20%；runtime 計算為五次平均
 
 | 張數  |平均 GPU Runtime（s） | 平均 CPU Runtime（s） | GPU 記憶體（峰值）（MB） |
 |-----|----------------------|---------------------|------------------------|
@@ -61,7 +61,7 @@ Inference Time 使用 1920 × 1280 （HD）的圖片做測試，塗改面積平�
 3. 地面上的燈光還原後稍微有些扭曲，但如果看圖片整體不亦察覺
 
 <center>
-<img src="readme_assets/case_1-1_mini_1.png" height="192"/> <img src="readme_assets/case_1-1_mini_2.png" height="192"/> <img src="readme_assets/case_1-1_mini_3.png" height="192"/>
+<img src="readme_assets/case_1-1_mini_1.png" height="128"/> <img src="readme_assets/case_1-1_mini_2.png" height="128"/> <img src="readme_assets/case_1-1_mini_3.png" height="128"/>
 </center>
 
 
@@ -74,7 +74,7 @@ Inference Time 使用 1920 × 1280 （HD）的圖片做測試，塗改面積平�
 3. 座椅稍微扭曲，但不亦察覺；腳下燈光算完整
 
 <center>
-<img src="readme_assets/case_1-2_mini_1.png" height="192"/> <img src="readme_assets/case_1-2_mini_2.png" height="192"/> <img src="readme_assets/case_1-2_mini_3.png" height="192"/>
+<img src="readme_assets/case_1-2_mini_1.png" height="128"/> <img src="readme_assets/case_1-2_mini_2.png" height="128"/> <img src="readme_assets/case_1-2_mini_3.png" height="128"/>
 </center>
 
 ### Case 2-1
@@ -85,7 +85,7 @@ Inference Time 使用 1920 × 1280 （HD）的圖片做測試，塗改面積平�
 2. 部分區塊使用灰色（亮色）去做填補，推測是因為畫筆塗的邊界不夠出去（只和溫昇豪西裝邊界重合）；目前排除是因為顏色對比的緣故，因為前面 Case 1 粉紅色背心同樣與背景有明顯對比，但依然能夠將背心完全去除
 
 <center>
-<img src="readme_assets/case_2-1_mini_1.png" height="192"/> <img src="readme_assets/case_2-1_mini_2.png" height="192"/> <img src="readme_assets/case_2-1_mini_3.png" height="192"/>
+<img src="readme_assets/case_2-1_mini_1.png" height="128"/> <img src="readme_assets/case_2-1_mini_2.png" height="128"/> <img src="readme_assets/case_2-1_mini_3.png" height="128"/>
 </center>
 
 ### Case 2-2
@@ -107,7 +107,7 @@ Inference Time 使用 1920 × 1280 （HD）的圖片做測試，塗改面積平�
 2. 放大看能夠看到明顯修圖痕跡，但是整張圖片來看的話，不仔細看看不出來
 
 <center>
-<img src="readme_assets/case_3_mini_1.png" height="192"/> <img src="readme_assets/case_3_mini_2.png" height="192"/> <img src="readme_assets/case_3_mini_3.png" height="192"/>
+<img src="readme_assets/case_3_mini_1.png" height="128"/> <img src="readme_assets/case_3_mini_2.png" height="128"/> <img src="readme_assets/case_3_mini_3.png" height="128"/>
 </center>
 
 ## Inference & More Info
