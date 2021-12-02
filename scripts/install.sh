@@ -23,11 +23,13 @@ apt update -y && DEBIAN_FRONTEND=noninteractive apt install -y --allow-downgrade
     python3-opencv
 
 cd $(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
-echo /work > work-directory.pth
+echo /work/src > work-directory.pth
 
 cd /work
 
 pip3 install --ignore-installed --no-cache-dir -r requirements.txt
+
+cd /work/src
 
 curl -L $(yadisk-direct https://disk.yandex.ru/d/ouP6l8VJ0HpMZg) -o big-lama.zip
 unzip big-lama.zip
