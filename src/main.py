@@ -37,7 +37,7 @@ async def inpainting(request: InpaintingRequest):
     try:
         h = requests.head(request.mask_url, allow_redirects=True)
     except Exception:
-        raise HTTPException(400, detail="Invalid URL for video")
+        raise HTTPException(400, detail="Invalid URL for mask")
     if "image/png" not in h.headers["Content-Type"]:
         raise HTTPException(400, detail="Invalid image file type: expected png")
 
