@@ -118,7 +118,7 @@ Inference Time 使用"2560 ×"2560 （HD）的圖片做測試，塗改面積平�
 </p>
 
 ## Inference & More Info
-更多細節見原本的 [README]("README.lama.md")。
+更多細節見原本的 [README](README.lama.md)。
 
 Note：原本 README 上的 project directory 即 root directory，這裡的 root directory 為 `src`。
 
