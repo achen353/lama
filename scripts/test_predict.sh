@@ -10,6 +10,8 @@ function output {
   fi
 }
 
+cd src
+
 rm -r ./LaMa_test_images
 
 curl -L $(yadisk-direct https://disk.yandex.ru/d/xKQJZeVRk5vLlQ) -o LaMa_test_images.zip
