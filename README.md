@@ -78,7 +78,7 @@ Inference Time 使用"2560 ×"2560 （HD）的圖片做測試，塗改面積平�
 <p float="center">
     <img src="readme_assets/case_1-2_mini_1.png" height="256"/>
     <img src="readme_assets/case_1-2_mini_2.png" height="256"/>
-    <img src="readme_assets/case_1-2_mini_3.png" height="256/>
+    <img src="readme_assets/case_1-2_mini_3.png" height="256"/>
 </p>
 
 ### Case 2-1
@@ -91,7 +91,7 @@ Inference Time 使用"2560 ×"2560 （HD）的圖片做測試，塗改面積平�
 <p float="center">
     <img src="readme_assets/case_2-1_mini_1.png" height="256"/>
     <img src="readme_assets/case_2-1_mini_2.png" height="256"/>
-    <img src="readme_assets/case_2-1_mini_3.png" height="256/>
+    <img src="readme_assets/case_2-1_mini_3.png" height="256"/>
 </p>
 
 ### Case 2-2
@@ -114,7 +114,7 @@ Inference Time 使用"2560 ×"2560 （HD）的圖片做測試，塗改面積平�
 <p float="center">
     <img src="readme_assets/case_3_mini_1.png" height="256"/>
     <img src="readme_assets/case_3_mini_2.png" height="256"/>
-    <img src="readme_assets/case_3_mini_3.png" height="256/>
+    <img src="readme_assets/case_3_mini_3.png" height="256"/>
 </p>
 
 ## Inference & More Info
