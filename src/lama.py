@@ -3,24 +3,34 @@ import shutil
 import subprocess
 from pathlib import Path
 
-output_dir = "projects/fs_vid2vid/output/face_forensics"
+output_dir = "output"
 
 
-def inference(image_path, video_path):
+def inference(image_path, mask_path):
+    curr_dir = Path.cwd()
+    model_path = os.path.join(curr_dir, "big-lama")
+    in_dir = os.path.join(curr_dir, "input")
+    out_dir = os.path.join(curr_dir, output_dir)
 
-    if os.path.isdir(output_dir):
-        shutil.rmtree(output_dir)
+    if os.path.isdir(in_dir):
+        shutil.rmtree(in_dir)
+    os.makedirs(in_dir, exist_ok=True)
+
+    image_stem = Path(image_path).stem
+    image_name = image_stem + ".png"
+    mask_name = image_stem + "_mask.png"
+
+    shutil.move(image_path, os.path.join(in_dir, image_name))
+    shutil.move(mask_path, os.path.join(in_dir, mask_name))
 
     subprocess.run(
         [
             "python",
-            "inference.py",
-            "--single_gpu",
-            "--num_worker",
-            "0",
-            "--config",
-            config_path,
-            "--output_dir",
-            output_dir,
+            "bin/predict.py",
+            f"model.path={model_path}",
+            f"indir={in_dir}",
+            f"outdir={out_dir}",
         ]
     )
+
+    return mask_name

@@ -9,7 +9,7 @@ from cloudinary.uploader import upload as cloudinary_upload
 from fastapi import FastAPI, HTTPException
 
 from app.settings import config
-from inference import inference
+from lama import inference, output_dir
 
 app = FastAPI()
 cloudinary.config(
@@ -25,38 +25,39 @@ class InpaintingRequest(pydantic.BaseModel):
     mask_url: str
 
 
+@app.post("/inpainting", response_model=typing.Dict[str, str])
 async def inpainting(request: InpaintingRequest):
     # Check the content type of the URL before downloading the content
     try:
-        h = requests.head(request.reference_image_url, allow_redirects=True)
+        h = requests.head(request.image_url, allow_redirects=True)
     except Exception:
         raise HTTPException(400, detail="Invalid URL for image")
-    if "image/jpeg" not in h.headers["Content-Type"]:
-        raise HTTPException(400, detail="Invalid image file type: expected jpg/jpeg")
+    if "image/png" not in h.headers["Content-Type"]:
+        raise HTTPException(400, detail="Invalid image file type: expected png")
     try:
-        h = requests.head(request.driving_video_url, allow_redirects=True)
+        h = requests.head(request.mask_url, allow_redirects=True)
     except Exception:
-        raise HTTPException(400, detail="Invalid URL for video")
-    if "image/jpeg" not in h.headers["Content-Type"]:
-        raise HTTPException(400, detail="Invalid image file type: expected jpg/jpeg")
+        raise HTTPException(400, detail="Invalid URL for mask")
+    if "image/png" not in h.headers["Content-Type"]:
+        raise HTTPException(400, detail="Invalid image file type: expected png")
 
     # Download and write files to temporary directory
-    resp = requests.get(request.reference_image_url)
-    with NamedTemporaryFile(delete=False, suffix=".jpg") as image_tmp:
+    resp = requests.get(request.image_url)
+    with NamedTemporaryFile(delete=False, suffix=".png") as image_tmp:
         image_tmp.write(resp.content)
 
-    resp = requests.get(request.driving_video_url)
-    with NamedTemporaryFile(delete=False, suffix=".mp4") as video_tmp:
-        video_tmp.write(resp.content)
+    resp = requests.get(request.mask_url)
+    with NamedTemporaryFile(delete=False, suffix=".png") as mask_tmp:
+        mask_tmp.write(resp.content)
 
     # Model inference
-    inference(image_tmp.name, video_tmp.name)
+    output_filename = inference(image_tmp.name, mask_tmp.name)
 
     # Upload model output
     upload_resp = cloudinary_upload(
-        os.path.join(output_dir, "001.mp4"),
-        folder="fewshot-vid2vid-outputs",
-        resource_type="video",
+        os.path.join(output_dir, output_filename),
+        folder="lama-outputs",
+        resource_type="image",
     )
 
     return {"output_url": upload_resp["url"]}

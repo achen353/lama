@@ -25,6 +25,14 @@ antlr4-python3-runtime==4.8
     #   -r requirements/../requirements.txt
     #   hydra-core
     #   omegaconf
+anyio==3.4.0
+    # via
+    #   -r requirements/../requirements.txt
+    #   starlette
+asgiref==3.4.1
+    # via
+    #   -r requirements/../requirements.txt
+    #   uvicorn
 async-timeout==4.0.1
     # via
     #   -r requirements/../requirements.txt
@@ -44,17 +52,26 @@ cachetools==4.2.4
 certifi==2021.10.8
     # via
     #   -r requirements/../requirements.txt
+    #   cloudinary
     #   requests
 charset-normalizer==2.0.8
     # via
     #   -r requirements/../requirements.txt
     #   aiohttp
     #   requests
+click==8.0.3
+    # via
+    #   -r requirements/../requirements.txt
+    #   uvicorn
+cloudinary==1.28.0
+    # via -r requirements/../requirements.txt
 cycler==0.11.0
     # via
     #   -r requirements/../requirements.txt
     #   matplotlib
 easydict==1.9.0
+    # via -r requirements/../requirements.txt
+fastapi==0.70.0
     # via -r requirements/../requirements.txt
 fonttools==4.28.2
     # via
@@ -86,11 +103,16 @@ grpcio==1.42.0
     # via
     #   -r requirements/../requirements.txt
     #   tensorboard
+h11==0.12.0
+    # via
+    #   -r requirements/../requirements.txt
+    #   uvicorn
 hydra-core==1.1.0
     # via -r requirements/../requirements.txt
 idna==3.3
     # via
     #   -r requirements/../requirements.txt
+    #   anyio
     #   requests
     #   yarl
 imageio==2.13.0
@@ -202,6 +224,10 @@ pyasn1-modules==0.2.8
     # via
     #   -r requirements/../requirements.txt
     #   google-auth
+pydantic==1.8.2
+    # via
+    #   -r requirements/../requirements.txt
+    #   fastapi
 pyparsing==3.0.6
     # via
     #   -r requirements/../requirements.txt
@@ -212,6 +238,8 @@ python-dateutil==2.8.2
     #   -r requirements/../requirements.txt
     #   matplotlib
     #   pandas
+python-multipart==0.0.5
+    # via -r requirements/../requirements.txt
 pytorch-lightning==1.2.9
     # via -r requirements/../requirements.txt
 pytz==2021.3
@@ -270,10 +298,20 @@ six==1.16.0
     # via
     #   -r requirements/../requirements.txt
     #   absl-py
+    #   cloudinary
     #   google-auth
     #   grpcio
     #   imgaug
     #   python-dateutil
+    #   python-multipart
+sniffio==1.2.0
+    # via
+    #   -r requirements/../requirements.txt
+    #   anyio
+starlette==0.16.0
+    # via
+    #   -r requirements/../requirements.txt
+    #   fastapi
 tabulate==0.8.9
     # via -r requirements/test.in
 tensorboard==2.7.0
@@ -321,11 +359,15 @@ typing-extensions==4.0.0
     # via
     #   -r requirements/../requirements.txt
     #   async-timeout
+    #   pydantic
     #   torch
 urllib3==1.26.7
     # via
     #   -r requirements/../requirements.txt
+    #   cloudinary
     #   requests
+uvicorn==0.15.0
+    # via -r requirements/../requirements.txt
 webdataset==0.1.103
     # via -r requirements/../requirements.txt
 werkzeug==2.0.2

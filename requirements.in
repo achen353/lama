@@ -1,5 +1,13 @@
 --find-links https://download.pytorch.org/whl/cu111/torch_stable.html
 
+# ---- Deployment
+fastapi
+python-multipart
+uvicorn
+
+# ---- HTTP
+requests
+
 # ---- Image
 albumentations==0.5.2
 kornia==0.5.0
@@ -17,6 +25,9 @@ torch
 torchvision
 pytorch-lightning==1.2.9
 webdataset
+
+# ---- Storage
+cloudinary
 
 # ---- Utils
 easydict==1.9.0
