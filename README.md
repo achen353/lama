@@ -8,7 +8,7 @@
 [Casual GAN Papers Summary](https://www.casualganpapers.com/large-masks-fourier-convolutions-inpainting/LaMa-explained.html) | 
 [Demo on Colab](https://colab.research.google.com/drive/1jBeleCnQfh1ZgnaYyhWs6hQU72ZoQ0K4?usp=sharing)
 
-LaMa 是個圖像修復模型，要讓消除物體原本的位置看起來合理，就會用附近的顏色或是物體來參考填補的顏色
+LaMa 是個圖像修復模型，透過欲修復區塊附近的背景或物體顏色進行填補，
 
 ## 模型/硬體限制
 ### 解析度
