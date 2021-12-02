@@ -60,9 +60,11 @@ Inference Time 使用 1280 × 1280 （HD）的圖片做測試，塗改面積平�
 2. 後方灰色外套的路人因為沒有完全蓋住，所以同樣被延伸取代擦掉的區塊，甚至稍微還原些人形
 3. 地面上的燈光還原後稍微有些扭曲，但如果看圖片整體不亦察覺
 
-<center>
-<img src="readme_assets/case_1-1_mini_1.png" height="128"/> <img src="readme_assets/case_1-1_mini_2.png" height="128"/> <img src="readme_assets/case_1-1_mini_3.png" height="128"/>
-</center>
+<p float="center">
+    <img src="readme_assets/case_1-1_mini_1.png" height="128"/>
+    <img src="readme_assets/case_1-1_mini_2.png" height="128"/>
+    <img src="readme_assets/case_1-1_mini_3.png" height="128"/>
+</p>
 
 
 ### Case 1-2
@@ -73,9 +75,11 @@ Inference Time 使用 1280 × 1280 （HD）的圖片做測試，塗改面積平�
 2. 後方灰色外套原本下半身是被黑衣男子蓋住的，但是模型能夠將其背包和外套下半部分延伸
 3. 座椅稍微扭曲，但不亦察覺；腳下燈光算完整
 
-<center>
-<img src="readme_assets/case_1-2_mini_1.png" height="128"/> <img src="readme_assets/case_1-2_mini_2.png" height="128"/> <img src="readme_assets/case_1-2_mini_3.png" height="128"/>
-</center>
+<p float="center">
+    <img src="readme_assets/case_1-2_mini_1.png" height="128"/>
+    <img src="readme_assets/case_1-2_mini_2.png" height="128"/>
+    <img src="readme_assets/case_1-2_mini_3.png" height="128"/>
+</p>
 
 ### Case 2-1
 
@@ -84,14 +88,15 @@ Inference Time 使用 1280 × 1280 （HD）的圖片做測試，塗改面積平�
 1. 人物背景過於複雜（有顏色對比高的文字和人影）
 2. 部分區塊使用灰色（亮色）去做填補，推測是因為畫筆塗的邊界不夠出去（只和溫昇豪西裝邊界重合）；目前排除是因為顏色對比的緣故，因為前面 Case 1 粉紅色背心同樣與背景有明顯對比，但依然能夠將背心完全去除
 
-<center>
-<img src="readme_assets/case_2-1_mini_1.png" height="128"/> <img src="readme_assets/case_2-1_mini_2.png" height="128"/> <img src="readme_assets/case_2-1_mini_3.png" height="128"/>
-</center>
+<p float="center">
+    <img src="readme_assets/case_2-1_mini_1.png" height="128"/>
+    <img src="readme_assets/case_2-1_mini_2.png" height="128"/>
+    <img src="readme_assets/case_2-1_mini_3.png" height="128"/>
+</p>
 
 ### Case 2-2
 
 <img src="readme_assets/case_2-2-1.png"/>
-
 
 1. （上圖）這裡嘗試大面積塗改，把溫昇豪的影子和周圍背景上的有重疊的字都覆蓋，可以看到如果塗改的區域有空心部分，內部的空隙也會影響塗改區域的填補
 2. （下圖）如果把塗改的區域改成實心的，效果算是不錯，除了下方（原溫昇豪右腿處）區域有些突兀的亮點，上方左邊較亮的背景和右邊較深的背景銜接挺完美的
@@ -106,9 +111,11 @@ Inference Time 使用 1280 × 1280 （HD）的圖片做測試，塗改面積平�
 1. 後方吊臂的修補算是完整，房屋的規律有抓到，但是仍舊有陰影
 2. 放大看能夠看到明顯修圖痕跡，但是整張圖片來看的話，不仔細看看不出來
 
-<center>
-<img src="readme_assets/case_3_mini_1.png" height="128"/> <img src="readme_assets/case_3_mini_2.png" height="128"/> <img src="readme_assets/case_3_mini_3.png" height="128"/>
-</center>
+<p float="center">
+    <img src="readme_assets/case_3_mini_1.png" height="128"/>
+    <img src="readme_assets/case_3_mini_2.png" height="128"/>
+    <img src="readme_assets/case_3_mini_3.png" height="128"/>
+</p>
 
 ## Inference & More Info
 更多細節見原本的 [README]("README.lama.md")。
