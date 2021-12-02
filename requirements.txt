@@ -18,6 +18,10 @@ antlr4-python3-runtime==4.8
     # via
     #   hydra-core
     #   omegaconf
+anyio==3.4.0
+    # via starlette
+asgiref==3.4.1
+    # via uvicorn
 async-timeout==4.0.1
     # via aiohttp
 attrs==21.2.0
@@ -27,14 +31,22 @@ braceexpand==0.1.7
 cachetools==4.2.4
     # via google-auth
 certifi==2021.10.8
-    # via requests
+    # via
+    #   cloudinary
+    #   requests
 charset-normalizer==2.0.8
     # via
     #   aiohttp
     #   requests
+click==8.0.3
+    # via uvicorn
+cloudinary==1.28.0
+    # via -r requirements.in
 cycler==0.11.0
     # via matplotlib
 easydict==1.9.0
+    # via -r requirements.in
+fastapi==0.70.0
     # via -r requirements.in
 fonttools==4.28.2
     # via matplotlib
@@ -54,10 +66,13 @@ google-auth-oauthlib==0.4.6
     # via tensorboard
 grpcio==1.42.0
     # via tensorboard
+h11==0.12.0
+    # via uvicorn
 hydra-core==1.1.0
     # via -r requirements.in
 idna==3.3
     # via
+    #   anyio
     #   requests
     #   yarl
 imageio==2.13.0
@@ -142,6 +157,8 @@ pyasn1==0.4.8
     #   rsa
 pyasn1-modules==0.2.8
     # via google-auth
+pydantic==1.8.2
+    # via fastapi
 pyparsing==3.0.6
     # via
     #   matplotlib
@@ -150,6 +167,8 @@ python-dateutil==2.8.2
     # via
     #   matplotlib
     #   pandas
+python-multipart==0.0.5
+    # via -r requirements.in
 pytorch-lightning==1.2.9
     # via -r requirements.in
 pytz==2021.3
@@ -165,6 +184,7 @@ pyyaml==6.0
     #   webdataset
 requests==2.26.0
     # via
+    #   -r requirements.in
     #   fsspec
     #   requests-oauthlib
     #   tensorboard
@@ -193,10 +213,16 @@ shapely==1.8.0
 six==1.16.0
     # via
     #   absl-py
+    #   cloudinary
     #   google-auth
     #   grpcio
     #   imgaug
     #   python-dateutil
+    #   python-multipart
+sniffio==1.2.0
+    # via anyio
+starlette==0.16.0
+    # via fastapi
 tensorboard==2.7.0
     # via pytorch-lightning
 tensorboard-data-server==0.6.1
@@ -227,9 +253,14 @@ tqdm==4.62.3
 typing-extensions==4.0.0
     # via
     #   async-timeout
+    #   pydantic
     #   torch
 urllib3==1.26.7
-    # via requests
+    # via
+    #   cloudinary
+    #   requests
+uvicorn==0.15.0
+    # via -r requirements.in
 webdataset==0.1.103
     # via -r requirements.in
 werkzeug==2.0.2
